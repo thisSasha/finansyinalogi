@@ -107,11 +107,10 @@ document.getElementById('showMore').onclick = function (e) {
 
 
 function callRequest(phNum) {
-    const chatid = "1354294387";
-    const token = "6064679555:AAH54AwwdFqvOrnauSCxh8AQ1Ee_J-mI-BU";
     const text = phNum;
 
     //Отправляем текст в наш телеграм канал
+    console.log(token, chatid, text)
     otpravka(token, text, chatid);
 }
 

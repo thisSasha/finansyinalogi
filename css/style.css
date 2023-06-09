@@ -6,6 +6,7 @@ body {
     background: #EDEDED;
     font-size: 12px;
     width: 100vw;
+    min-width: 99vw;
     max-width: 100vw;
     height: 100vh;
     position: absolute;
@@ -470,47 +471,3 @@ footer .footer__numbers {
 }
 
 
-
-@media screen and (max-width: 768px) {
-    .nav__elements {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-    }
-
-    .header__elements {
-        flex-direction: column;
-    }
-
-    .header__info {
-        text-align: center;
-        align-items: center;
-    }
-
-    .nav__links {
-        display: none;
-        position: absolute;
-        left: 0;
-        right: 0;
-        background: #00CBD8;
-        padding: 48px;
-        z-index: -1;
-        text-align: center;
-    }
-
-    .nav__links.show {
-        display: flex;
-        flex-direction: column;
-        z-index: 996;
-    }
-
-    .nav__hamburger {
-        display: block;
-        z-index: 997;
-    }
-
-    h1 {
-        text-align: center;
-    }
-}
