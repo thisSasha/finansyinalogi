@@ -16,6 +16,11 @@ body {
     font-weight: 400;
 }
 
+.scrollNone {
+    overflow: hidden;
+}
+
+
 h1,
 h2,
 h3,
@@ -33,7 +38,7 @@ h1 {
 
 h2 {
     font-size: 5em;
-    margin-bottom: 4px;
+    margin-bottom: 32px;
 }
 
 h3 {
@@ -58,14 +63,13 @@ button,
 }
 
 ._line {
-    text-decoration: underline #00CBD8 6px;
+    text-decoration: underline #00CBD8 4px;
     text-decoration-skip-ink: none;
 }
 
 section {
-    margin: 28px auto;
-    width: 82vw;
-    padding: 20px 0;
+    margin: 0 auto;
+    padding: 45px 0;
 }
 
 .container {
@@ -103,6 +107,7 @@ nav {
 }
 
 .nav__links {
+    font-size: 1.4em;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -248,12 +253,16 @@ header {
     text-align: center;
 }
 
+.pricelist {
+    font-size: 1.2em;
+}
+
 .pricelist__main {
     transition: 400ms;
     width: 100%;
     font-size: 2em;
     margin: auto;
-    height: 28vh;
+    max-height: 180px;
     overflow: hidden;
     background-color: #b7ecef;
 }
@@ -293,7 +302,8 @@ header {
 
 .pricelist__content {
     display: none;
-    padding: 20px;
+    padding: 20px;  
+    text-align: left;
 }
 
 .pricelist__content.current {

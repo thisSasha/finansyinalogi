@@ -4,6 +4,9 @@ document.querySelectorAll('a[href^="#N"]').forEach(link => {
             document.querySelector('.nav__links').classList.toggle('nav__links_active');
             document.querySelector('.nav__gamburger').classList.toggle('nav__gamburger_active');
         };
+        document.querySelector('.nav__links').classList.remove('show');
+        document.querySelector('.nav__hamburger').classList.remove('active');
+        document.body.classList.remove('scrollNone');
         e.preventDefault();
         let href = this.getAttribute('href').substring(2);
         const scrollTarget = document.querySelector(href);
@@ -43,6 +46,11 @@ let listToIPArray = [
     ['Страхование', 680],
     ['Пенсионные планы', 230],
 ];
+
+
+
+
+
 
 let toJurLObject = listToJurLArray.map(function (i) {
     return `
@@ -99,18 +107,24 @@ for (let i = 0; i < tabLinks.length; i++) {
 };
 
 
+
+
+
 let showed = false;
 
 document.getElementById('showMore').onclick = function (e) {
+    let height = document.querySelector('.pricelist__main').scrollHeight
     if (showed) {
-        document.querySelector('.pricelist__main').style.height = '28vh';
+        document.querySelector('.pricelist__main').style.maxHeight = '180px';
         e.target.childNodes[1].innerHTML = '+';
     } else {
-        document.querySelector('.pricelist__main').style.height = 'max-content';
+        document.querySelector('.pricelist__main').style.maxHeight = height+'px';
         e.target.childNodes[1].innerHTML = '-';
     };
     showed = !showed;
 };
+
+
 
 
 function callRequest(phNum) {
@@ -152,4 +166,5 @@ const navLinks = document.querySelector('.nav__links');
 
 hamburgerButton.addEventListener('click', () => {
     navLinks.classList.toggle('show');
+    document.body.classList.toggle('scrollNone');
 });

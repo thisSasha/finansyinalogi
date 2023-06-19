@@ -1,6 +1,6 @@
 @media (max-width:1200px) {
     body {
-        font-size: calc(100vw/148.8);
+        font-size: calc(100vw/170);
     }
 }
 
@@ -42,7 +42,6 @@
 
     .nav__links {
         transition: 600ms;
-        font-size: 2em;
         position: fixed;
         left: 0;
         transform: translate(0, -100%);
@@ -79,6 +78,6 @@
 
 @media (min-width:1201px) {
     body {
-        font-size: 10px;
+        font-size: calc(100vw/200);
     }
 }
