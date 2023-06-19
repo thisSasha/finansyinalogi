@@ -64,6 +64,13 @@ document.querySelector('.pricelist__toJurL').innerHTML = toJurLObject;
 document.querySelector('.pricelist__toIP').innerHTML = toIPObject;
 
 
+const navGamburger = document.querySelector('.nav__hamburger');
+
+navGamburger.addEventListener('click', () => {
+    navGamburger.classList.toggle('active');
+});
+
+
 
 let tabLinks = document.querySelectorAll(".pricelist__tab");
 let tabContents = document.querySelectorAll(".pricelist__content");
@@ -110,7 +117,6 @@ function callRequest(phNum) {
     const text = phNum;
 
     //Отправляем текст в наш телеграм канал
-    console.log(token, chatid, text)
     otpravka(token, text, chatid);
 }
 

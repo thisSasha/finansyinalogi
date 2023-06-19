@@ -27,25 +27,34 @@ h6 {
 }
 
 h1 {
-    font-size: 4.2em;
+    font-size: 6em;
     text-align: left;
 }
 
 h2 {
-    font-size: 3.6em;
+    font-size: 5em;
     margin-bottom: 4px;
 }
 
 h3 {
-    font-size: 2.8em;
+    font-size: 4em;
     margin-top: 16px;
     margin-bottom: 12px;
 }
 
+a {
+    color: black;
+}
+
 .text {
     margin-top: 10px;
-    font-size: 2.1em;
     width: 70%;
+}
+
+.text,
+button,
+.contact p {
+    font-size: 3em;
 }
 
 ._line {
@@ -61,18 +70,22 @@ section {
 
 .container {
     padding: 0 24px;
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 
 
 
-
 nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     padding: 14px 0;
     background: #00CBD8;
     width: 100vw;
@@ -83,7 +96,7 @@ nav {
 .nav__elements {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 0px;
     gap: 100px;
@@ -118,9 +131,9 @@ nav {
 .nav__hamburger span {
     position: absolute;
     width: 100%;
-    height: 3px;
+    height: 2px;
     background-color: black;
-    transition: transform 0.4s ease-out;
+    transition: 0.4s ease-out;
 }
 
 .nav__hamburger span:nth-child(1) {
@@ -155,6 +168,25 @@ nav {
     color: #006067;
 }
 
+.nav__hamburger.active span:first-child {
+    top: 9px;
+    transform: rotate(45deg);
+    margin-top: 0;
+}
+
+.nav__hamburger.active span:nth-child(2) {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.nav__hamburger.active span:last-child {
+    bottom: 9px;
+    transform: rotate(-45deg);
+    margin-bottom: 0;
+}
+
+
+
 
 
 
@@ -166,7 +198,7 @@ header {
     align-items: center;
     justify-content: center;
     padding: 112px 28px 28px 28px;
-    height: 100vh;
+    min-height: 100vh;
     background: radial-gradient(#00939e, #ABFFFA);
 }
 
@@ -184,13 +216,12 @@ header {
     justify-content: left;
     align-items: left;
     gap: 20px;
-    width: 50%;
 }
 
 .header__img {
     border-radius: 10px;
     box-shadow: 0px 0px 26px 0px rgba(34, 60, 80, 0.2);
-    width: 32vw;
+    width: 50%;
 }
 
 .header__info p {
@@ -219,7 +250,7 @@ header {
 
 .pricelist__main {
     transition: 400ms;
-    width: 80vw;
+    width: 100%;
     font-size: 2em;
     margin: auto;
     height: 28vh;
@@ -233,7 +264,7 @@ header {
 
 .pricelist__nav {
     display: grid;
-    width: 80vw;
+    width: 100%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
 }
@@ -283,7 +314,7 @@ header {
     background-color: #b7ecef;
     padding: 8px;
     border-radius: 0 0 10px 10px;
-    width: 80vw;
+    width: 100%;
     cursor: pointer;
 }
 
@@ -293,20 +324,19 @@ header {
 
 
 .contact__main {
-    margin: 5px 16px;
+    margin: 5px auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     gap: 15vw;
-    width: 90vw;
+    width: 100%;
 }
 
 .contact p {
     margin-left: 16px;
     margin-right: 12px;
     margin-top: 6px;
-    font-size: 1.8em;
 }
 
 .contact__requestCall input {
@@ -343,6 +373,9 @@ header {
     cursor: pointer;
     margin-left: 4px;
 }
+
+
+
 
 
 .jobTime__table {
@@ -469,5 +502,3 @@ footer .footer__numbers {
     overflow-y: scroll;
     margin-bottom: 25px;
 }
-
-
