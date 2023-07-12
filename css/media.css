@@ -13,6 +13,15 @@
         flex-direction: column;
     }
 
+    button,
+    .header__info button,
+    input,
+    .contact__requestCall input,
+    .contact__requestCall button,
+    footer {
+        font-size: 2.8em;
+    }
+
     .nav__elements {
         display: flex;
         width: 100%;
@@ -46,7 +55,7 @@
         left: 0;
         transform: translate(0, -100%);
         right: 0;
-        background: #00c6d4e9;
+        background: rgba(0, 0, 0, 0.548);
         padding: 48px;
         height: 100vh;
         z-index: -1;
@@ -57,7 +66,7 @@
     }
 
     .nav__links.show {
-        transform: translate(0,0);
+        transform: translate(0, 0);
         top: 0;
     }
 
@@ -72,6 +81,14 @@
 
     body {
         font-size: calc(100vw/70);
+    }
+
+    section {
+        width: 100%;
+    }
+
+    .contact__main>* {
+        font-size: 1.4em;
     }
 }
 
