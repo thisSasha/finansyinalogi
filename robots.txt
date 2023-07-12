@@ -1,0 +1,8 @@
+User-agent: *
+Crawl-delay: 1
+Host: fin-nal.by
+Disallow: /res/
+Disallow: /js/
+Disallow: /css/
+Disallow: /php/
+Sitemap: http://fin-nal.by/sitemap.xml
