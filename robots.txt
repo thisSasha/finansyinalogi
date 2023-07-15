@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 User-agent: *
 Crawl-delay: 1
 Host: fin-nal.by
 Disallow: /php/
+=======
+User-agent: *
+Crawl-delay: 1
+Host: fin-nal.by
+Disallow: /php/
+>>>>>>> 7d596c597d816dd9146e9b8178e153273ab5eaf3
 Sitemap: http://fin-nal.by/sitemap.xml
