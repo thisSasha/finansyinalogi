@@ -1,4 +1,4 @@
-document.querySelectorAll('a[href^="#N"]').forEach(link => {
+document.querySelectorAll('*[href^="#N"]').forEach(link => {
     link.onclick = function (e) {
         if (document.querySelector('.nav__links').classList.contains('nav__links_active')) {
             document.querySelector('.nav__links').classList.toggle('nav__links_active');
@@ -23,28 +23,22 @@ document.querySelectorAll('a[href^="#N"]').forEach(link => {
 
 
 
-let listToJurLArray = [
-    ['Консультации по налоговому учету и отчетности', 100],
-    ['Аудит и проверка бухгалтерской отчетности', 20],
-    ['Разработка планов финансового развития и стратегии компании', 80],
-    ['Постановка бухгалтерского учета в соответствии с требованиями законодательства', 3],
-    ['Консультации по налоговому учету и отчетности', 100],
-    ['Аудит и проверка бухгалтерской отчетности', 20],
-    ['Разработка планов финансового развития и стратегии компании', 80],
-    ['Постановка бухгалтерского учета в соответствии с требованиями законодательства', 340],
-    ['Расчет заработной платы и подготовка документации по работе с персоналом.', 560],
+let listToJurLArray = [ // Юр лиц
+    // < ['Консультации по налоговому учету и отчетности', 100], >            ПРИМЕР БЕЗ // и без <>
+    ['Ведение учета при УСН(численность работников 1-3)', 250],
+    ['Ведение учета при УСН(численность работников 4-6)', 350],
+    ['Ведение учета при УСН(численность работников 7-9)', 450],
+    ['Ведение учета при ОСН(численность работников 1-3)', 500],
+    ['Ведение учета при ОСН(численность работников 4-6)', 650],
+    ['Ведение учета при ОСН(численность работников 7-9)', 800],
+
+
 ];
-let listToIPArray = [
-    ['Инвестирование', 200],
-    ['Управление активами', 40],
-    ['Кредитование', 160],
-    ['Страхование', 680],
-    ['Пенсионные планы', 230],
-    ['Инвестирование', 200],
-    ['Управление активами', 40],
-    ['Кредитование', 160],
-    ['Страхование', 680],
-    ['Пенсионные планы', 230],
+let listToIPArray = [ // Ип
+    ['Ведение учета при ОСН без учёта затрат(Вычет - 20% от дохода)', 100],
+    ['Ведение учета при ОСН с учётом затрат', 180],
+    ['Ведение учета при ОСН. Рознич. и оптовая торговля с товарным учётом', 240],
+    ['Ведение учета при ОСН с НДС( учёт доходов и расходов )', 300],
 ];
 
 
@@ -54,12 +48,12 @@ let listToIPArray = [
 
 let toJurLObject = listToJurLArray.map(function (i) {
     return `
-        <div><p>${i[0]}</p><p>${i[1]} руб.</p></div>
+        <div><p>${i[0]}</p><p>${i[1]} руб./мес.</p></div>
     `;
 });
 let toIPObject = listToIPArray.map(function (i) {
     return `
-        <div><p>${i[0]}</p><p>${i[1]} руб.</p></div>
+        <div><p>${i[0]}</p><p>${i[1]} руб./мес.</p></div>
     `;
 });
 toJurLObject = toJurLObject.toString();
@@ -118,7 +112,7 @@ document.getElementById('showMore').onclick = function (e) {
         document.querySelector('.pricelist__main').style.maxHeight = '180px';
         e.target.childNodes[1].innerHTML = '+';
     } else {
-        document.querySelector('.pricelist__main').style.maxHeight = height+'px';
+        document.querySelector('.pricelist__main').style.maxHeight = height + 'px';
         e.target.childNodes[1].innerHTML = '-';
     };
     showed = !showed;
@@ -147,6 +141,9 @@ function otpravka(token, text, chatid) {
 
 function copyNum(e) {
     let copied = e.target.parentNode.childNodes[0].innerHTML;
+    copied = copied.replace(/\(/g, '' );
+    copied = copied.replace(/\)/g, '' );
+    copied = copied.replace(/\-/g, '' );
     navigator.clipboard.writeText(copied);
 };
 
