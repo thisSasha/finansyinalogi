@@ -63,7 +63,22 @@ toIPObject = toIPObject.toString();
 toIPObject.replace(',', '');
 toIPObject = toIPObject.replace(/,/gi, '');
 document.querySelector('.pricelist__toJurL').innerHTML = toJurLObject;
+document.querySelector('.pricelist__toJurL').innerHTML += `
+<hr/>
+<p class="pricelist__note">*Цена на услуги для каждого клиента устанавливается индивидуально</p>
+`;
 document.querySelector('.pricelist__toIP').innerHTML = toIPObject;
+document.querySelector('.pricelist__toIP').innerHTML += `
+<hr/>
+<p class="pricelist__note">*Базовые цены определены при условиях:</p>
+<ul class="pricelist__notes">
+    <li>ИП имеет 1 торговое место</li>
+    <li>1 КСА</li>
+    <li>Осуществляет один вид деятельности</li>
+    <li>В стоимость включена обработка до 20 первичных документов</li>
+</ul>
+<p class="pricelist__note">*Цена на услуги для каждого клиента устанавливается индивидуально</p>
+`;
 
 
 const navGamburger = document.querySelector('.nav__hamburger');
@@ -141,9 +156,9 @@ function otpravka(token, text, chatid) {
 
 function copyNum(e) {
     let copied = e.target.parentNode.childNodes[0].innerHTML;
-    copied = copied.replace(/\(/g, '' );
-    copied = copied.replace(/\)/g, '' );
-    copied = copied.replace(/\-/g, '' );
+    copied = copied.replace(/\(/g, '');
+    copied = copied.replace(/\)/g, '');
+    copied = copied.replace(/\-/g, '');
     navigator.clipboard.writeText(copied);
 };
 
