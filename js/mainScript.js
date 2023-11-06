@@ -148,7 +148,7 @@ function otpravka(token, text, chatid) {
     data.append("parse_mode", "HTML");
     data.append("text", text);
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatid}`);
+    xhr.open("POST", `https://api.telegram.org/bot${token}/sendMessage?chat_id=${-1002000000484}`);
     xhr.send(data);
     alert('Ваша заявка отправлена');
 

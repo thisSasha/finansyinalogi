@@ -385,7 +385,7 @@ header {
     width: 100%;
     height: 6vh;
     margin-bottom: 12px;
-    font-size: 1.6em;
+    font-size: 2em;
     border-radius: 12px;
     display: block;
     background: #95E8ED;
@@ -396,14 +396,15 @@ header {
 .contact__requestCall button {
     transition: 400ms;
     width: 100%;
-    font-size: 2.4em;
+    font-size: 2.8em;
     height: 6vh;
     background: #B7ECEF;
     border-radius: 12px;
+    opacity: 0.5;
 }
 
 .contact__requestCall button:hover {
-    background: linear-gradient(135deg, #B7ECEF, #005f64);
+    opacity: 1;
 }
 
 .contact__requestCall button:active {
