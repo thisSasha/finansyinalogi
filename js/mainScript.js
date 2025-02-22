@@ -23,62 +23,7 @@ document.querySelectorAll('*[href^="#N"]').forEach(link => {
 
 
 
-let listToJurLArray = [ // Юр лиц
-    // < ['Консультации по налоговому учету и отчетности', 100], >            ПРИМЕР БЕЗ // и без <>
-    ['Ведение учета при УСН(численность работников 1-3)', 250],
-    ['Ведение учета при УСН(численность работников 4-6)', 350],
-    ['Ведение учета при УСН(численность работников 7-9)', 450],
-    ['Ведение учета при ОСН(численность работников 1-3)', 500],
-    ['Ведение учета при ОСН(численность работников 4-6)', 650],
-    ['Ведение учета при ОСН(численность работников 7-9)', 800],
 
-
-];
-let listToIPArray = [ // Ип
-    ['Ведение учета при ОСН без учёта затрат(Вычет - 20% от дохода)', 100],
-    ['Ведение учета при ОСН с учётом затрат', 180],
-    ['Ведение учета при ОСН. Рознич. и оптовая торговля с товарным учётом', 240],
-    ['Ведение учета при ОСН с НДС( учёт доходов и расходов )', 300],
-];
-
-
-
-
-
-
-let toJurLObject = listToJurLArray.map(function (i) {
-    return `
-        <div><p>${i[0]}</p><p>${i[1]} руб./мес.</p></div>
-    `;
-});
-let toIPObject = listToIPArray.map(function (i) {
-    return `
-        <div><p>${i[0]}</p><p>${i[1]} руб./мес.</p></div>
-    `;
-});
-toJurLObject = toJurLObject.toString();
-toJurLObject.replace(',', '');
-toJurLObject = toJurLObject.replace(/,/gi, '');
-toIPObject = toIPObject.toString();
-toIPObject.replace(',', '');
-toIPObject = toIPObject.replace(/,/gi, '');
-document.querySelector('.pricelist__toJurL').innerHTML = toJurLObject;
-document.querySelector('.pricelist__toJurL').innerHTML += `
-<hr/>
-<p class="pricelist__note">*Цена на услуги для каждого клиента устанавливается индивидуально</p>
-`;
-document.querySelector('.pricelist__toIP').innerHTML = toIPObject;
-document.querySelector('.pricelist__toIP').innerHTML += `
-<hr/>
-<p class="pricelist__note">*Базовые цены определены при условиях:</p>
-<ul class="pricelist__notes">
-    <li>ИП имеет 1 торговое место</li>
-    <li>1 КСА</li>
-    <li>Осуществляет один вид деятельности</li>
-    <li>В стоимость включена обработка до 20 первичных документов</li>
-</ul>
-<p class="pricelist__note">*Цена на услуги для каждого клиента устанавливается индивидуально</p>
-`;
 
 
 const navGamburger = document.querySelector('.nav__hamburger');
